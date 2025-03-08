@@ -1,123 +1,185 @@
-/*
-Websites:
-
-- https://github.com/pmndrs/gltfjsx (GLTF JSX for 3D Models)
-- https://lucide.dev/icons/ (Lucide Icons)
-- https://github.com/anuraghazra/github-readme-stats (Github Readme Stats)
-- https://skillicons.dev (Skill Icons to show skills)
-- https://github-readme-streak-stats.herokuapp.com (Github Readme Streak Stats)
-
-:root {
-  --background: 27 27 27;
-  --foreground: 225 225 225;
-  --muted: 115 115 115;
-  --accent: 254 254 91; #FEFE5B
-}
-
-*/
-
+import Image from "next/image";
 export const projectsData = [
   {
+    id: 0,
+    name: "Cancer-Prediction-and-Classification",
+    description: "Harnessing the use of LncRNA for Cancer Prediction and Classification",
+    githubLink: "https://github.com/Jenas-Anton/Cancer-Prediction-and-Classification", 
+    src: "/skills-icons/Cancer-Pred.webp", // Updated key from imageUrl to src
+  },
+  {
     id: 1,
-    name: "EcoTracker",
-    description: "Track your carbon footprint",
-    date: "2022-08-15",
-    demoLink: "https://ecotracker.example.com",
+    name: "Llama-3-8b-chat-doctor",
+    description: "This is a project using Llama-3-8b-chat-doctor",
+    date: "Updated on Nov 25, 2024",
+    githubLink: "https://github.com/Jenas-Anton/Llama-3-8b-chat-doctor-", 
+    src: "/skills-icons/llama.webp",
   },
   {
     id: 2,
-    name: "ArtGallery Online",
-    description: "Digital art showcase platform",
-    date: "2022-06-20",
-    demoLink: "https://artgalleryonline.example.com",
+    name: "Al-Cold-Mail",
+    description: "This is a project on Al-Cold-Mail",
+    date: "Updated on Oct 27, 2024",
+    githubLink: "https://github.com/Jenas-Anton/AI-Cold-Mail",
+    src: "/skills-icons/AI-Cold-Mail.webp",
   },
   {
     id: 3,
-    name: "BudgetPlanner",
-    description: "Plan and track expenses",
-    date: "2022-09-10",
-    demoLink: "https://budgetplanner.example.com",
+    name: "Object-detection-model",
+    description: "This Python script uses OpenCV for real-time vehicle counting in videos. It employs background subtraction, contour detection, and centroid tracking to detect vehicles crossing a specified line.",
+    date: "Updated on Oct 1, 2024",
+    githubLink: "https://github.com/Jenas-Anton/Object-detection-model",
+    src: "/skills-icons/object-detection.webp",
   },
   {
     id: 4,
-    name: "HealthBeat",
-    description: "Monitor heart rate zones",
-    date: "2022-05-30",
-    demoLink: "https://healthbeat.example.com",
+    name: "Stable-Diffusion-Fine-Tuning",
+    description: "This repository contains code and resources for fine-tuning and utilizing machine learning models. The project focuses on training models using customized datasets, providing tools for model evaluation.",
+    date: "Updated on Oct 1, 2024",
+    githubLink: "https://github.com/Jenas-Anton/Stable-Diffusion-Fine-Tuning",
+    src: "/skills-icons/stable-diffusion.webp",
   },
   {
     id: 5,
-    name: "RecipeFinder",
-    description: "Discover new recipes",
-    date: "2022-07-12",
-    demoLink: "https://recipefinder.example.com",
-  },
-  {
-    id: 6,
-    name: "JourneyLogger",
-    description: "Log your travels",
-    date: "2022-10-01",
-    demoLink: "https://journeylogger.example.com",
-  },
-  {
-    id: 7,
-    name: "StudyBuddy",
-    description: "Collaborative learning platform",
-    date: "2022-04-18",
-    demoLink: "https://studybuddy.example.com",
-  },
-  {
-    id: 8,
-    name: "TechTalk",
-    description: "Tech news aggregator",
-    date: "2022-11-05",
-    demoLink: "https://techtalk.example.com",
-  },
-  {
-    id: 9,
-    name: "FitTrack",
-    description: "Fitness and workout tracker",
-    date: "2022-03-22",
-    demoLink: "https://fittrack.example.com",
-  },
-  {
-    id: 10,
-    name: "MindfulMoments",
-    description: "Meditation and mindfulness app",
-    date: "2022-02-14",
-    demoLink: "https://mindfulmoments.example.com",
+    name: "Portfolio Website",
+    description: "My personal portfolio website showcasing my skills and projects.",
+    date: "Ongoing",
+    githubLink: "https://github.com/Jenas-Anton/Portfolio-Website",
+    src: "/skills-icons/Portfolio.webp",
   },
 ];
 
 export const BtnList = [
-  { label: "Home", link: "/", icon: "home", newTab: false },
-  { label: "About", link: "/about", icon: "about", newTab: false },
-  { label: "Projects", link: "/projects", icon: "projects", newTab: false },
+  { label: "Home", link: "/#home", icon: "home", newTab: false },
+  { label: "Skills", link: "/#skills", icon: "about", newTab: false },
+  { label: "Projects", link: "/#Projects", icon: "projects", newTab: false },
   { label: "Contact", link: "/contact", icon: "contact", newTab: false },
   {
     label: "Github",
-    link: "https://www.github.com/codebucks27",
+    link: "https://github.com/Jenas-Anton",
     icon: "github",
     newTab: true,
   },
   {
     label: "LinkedIn",
-    link: "https://www.linkedin.com/in/codebucks",
+    link: "https://www.linkedin.com/in/jenas-anton/",
     icon: "linkedin",
     newTab: true,
   },
   {
-    label: "X",
-    link: "https://www.x.com/code_bucks",
-    icon: "twitter",
-    newTab: true,
-  },
-  {
     label: "Resume",
-    link: "/resume.pdf",
+    link: "https://drive.google.com/file/d/1SOc0oUfKlE091xqMSNgjDxXzxQqHfLvK/view?usp=drive_link",
     icon: "resume",
     newTab: true,
   },
 ];
 
 
+
+
+
+export const SkillData = [
+  // 🔹 Programming Languages
+  { 
+    name: "C++", 
+    src: "/skills-icons/c.svg", 
+    width: 80, 
+    height: 80 
+  },
+  { 
+    name: "Python", 
+    src: "/skills-icons/python-5.svg", 
+    width: 80, 
+    height: 80 
+  },
+  { 
+    name: "SQL", 
+    src: "/skills-icons/sql.png", 
+    width: 80, 
+    height: 80 
+  },
+  { 
+    name: "C Programming", 
+    src: "/skills-icons/c-1.svg", 
+    width: 80, 
+    height: 80 
+  },
+  { 
+    name: "R Programming", 
+    src: "/skills-icons/r-lang.svg", 
+    width: 80, 
+    height: 80 
+  },
+  { 
+    name: "Java", 
+    src: "/skills-icons/Java.png", 
+    width: 80, 
+    height: 80 
+  },
+
+  // 🔹 Development Tools
+
+ 
+  { 
+    name: "Jupyter Labs", 
+    src: "/skills-icons/Jupyter.png", 
+    width: 80, 
+    height: 80 
+  },
+
+  // 🔹 AI/ML Skills
+  { 
+    name: "Machine Learning", 
+    src: "/skills-icons/machine-learning.png", 
+    width: 80, 
+    height: 80 
+  },
+  { 
+    name: "Data Mining", 
+    src: "/skills-icons/data-mining.png", 
+    width: 80, 
+    height: 80 
+  },
+  { 
+    name: "Data Visualization", 
+    src: "/skills-icons/data-visualization.png", 
+    width: 80, 
+    height: 80 
+  },
+  { 
+    name: "Web Scraping", 
+    src: "/skills-icons/web-scraper.png", 
+    width: 80, 
+    height: 80 
+  },
+  { 
+    name: "Computer Vision", 
+    src: "/skills-icons/computer-vision.png", 
+    width: 80, 
+    height: 80 
+  },
+  { 
+    name: "Generative AI", 
+    src: "/skills-icons/Gen AI.png", 
+    width: 80, 
+    height: 80 
+  },
+  { 
+    name: "Deep Learning", 
+    src: "/skills-icons/deep-learning.png", 
+    width: 80, 
+    height: 80 
+  },
+  { 
+    name: "PyTorch", 
+    src: "/skills-icons/PyTorch.png", 
+    width: 80, 
+    height: 80 
+  },
+  { 
+    name: "TensorFlow", 
+    src: "/skills-icons/tensorflow-2.svg", 
+    width: 80, 
+    height: 80 
+  },
+];

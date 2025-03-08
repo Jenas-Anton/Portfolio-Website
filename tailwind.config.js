@@ -7,11 +7,21 @@ module.exports = {
   ],
   theme: {
     extend: {
-      backgroundImage: {
-        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+      fontFamily: {
+        inter: ["var(--font-inter)"],
       },
+      colors: {
+        background : 'rgb(var(--background))',
+        foreground: "rgb(var(--foreground))",
+        muted: "rgb(var(--muted))",  // Fixed typo
+        accent: "rgb(var(--accent))", // Fixed typo
+      },
+      animation :{
+        'spin-slow': 'spin 40s linear infinite',
+      },
+      screens: {
+        xs : '480px'
+      }
     },
   },
   plugins: [],
