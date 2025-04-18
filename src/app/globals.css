@@ -1,0 +1,94 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 27 27 27;
+    --foreground: 225 225 225;
+    --muted: 115 115 115;
+    --accent: 254 254 91; /* #FEFE5B */
+    --transition-speed: 0.3s;
+  }
+
+  /* Smooth scrolling */
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: rgb(var(--background));
+    color: rgb(var(--foreground));
+    font-family: 'Inter', sans-serif;
+    transition: background-color var(--transition-speed), color var(--transition-speed);
+  }
+}
+
+@layer components {
+  .btn {
+    @apply px-4 py-2 font-medium rounded-lg transition-all;
+  }
+
+  .btn-primary {
+    @apply bg-yellow-400 text-black hover:bg-yellow-500;
+  }
+}
+
+@layer utilities {
+  /* Rotation Animation */
+  .rotate-slow {
+    animation: spin 10s linear infinite;
+  }
+
+  @keyframes spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  /* Container for Buttons Rotation */
+  .rotation-container {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    transform-origin: var(--rotation-x, 50px) var(--rotation-y, -20px);
+  }
+
+  /* Accessibility Improvements */
+  .focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 4px;
+  }
+}
+.shine-effect {
+  position: relative;
+  overflow: hidden;
+  background: #fff;
+  border-radius: 4px;
+}
+
+.shine-effect::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(45deg, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0));
+  animation: shine 2s infinite;
+}
+
+@keyframes shine {
+  0% {
+    left: -200%;
+  }
+  50% {
+    left: 200%;
+  }
+  100% {
+    left: -200%;
+  }
+}
