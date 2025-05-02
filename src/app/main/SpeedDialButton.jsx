@@ -1,6 +1,7 @@
 "use client"
 import React, { useState, useEffect, useRef } from 'react';
 import { ChatBubbleLeftIcon, PaperAirplaneIcon } from '@heroicons/react/24/solid';
+import MarkdownPreview from '@uiw/react-markdown-preview';
 import '../globals.css';
 
 
@@ -104,7 +105,16 @@ const ChatComponent = () => {
                       : 'mr-auto bg-white border border-gray-200 text-black'
                   } ${msg.isError ? 'bg-red-100 text-red-900 border-red-200' : ''}`}
                 >
-                  {msg.content}
+                  <MarkdownPreview
+                    source={msg.content}
+                    style={{
+                    backgroundColor: 'transparent',
+                    fontSize: 14,
+                    color: '#111827',
+                    padding: 0,
+                          }}
+                  />
+
                 </div>
               ))
             )}
