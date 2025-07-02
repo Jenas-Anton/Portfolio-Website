@@ -32,7 +32,8 @@ const ChatComponent = () => {
     setIsLoading(true);
     
     try {
-      const response = await fetch('https://fastapichat-production-9fa8.up.railway.app/api/chat', {
+      const response = await fetch('http://18.232.151.88:8000
+', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
