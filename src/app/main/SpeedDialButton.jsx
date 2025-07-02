@@ -32,14 +32,14 @@ const ChatComponent = () => {
     setIsLoading(true);
     
     try {
-      const response = await fetch('http://18.232.151.88:8000
-', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ message: message }), // Making sure we send { message: "text" }
-      });
+      const response = await fetch('http://18.232.151.88:8000', {
+  method: 'POST',
+  headers: {
+    'Content-Type': 'application/json',
+  },
+  body: JSON.stringify({ message: message }),
+});
+
 
       if (!response.ok) {
         throw new Error(`Error: ${response.status} ${response.statusText}`);
