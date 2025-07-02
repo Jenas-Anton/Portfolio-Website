@@ -10,13 +10,14 @@ const SpeedDialButton = () => {
     setLoading(true);
 
     try {
-      const response = await fetch('http://18.232.151.88:8000/chat', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ message }),
-      });
+  const response = await fetch('http://18.232.151.88:8000/chat', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({ message }),
+  });
+
 
       if (!response.ok) throw new Error(`Server error: ${response.status}`);
 
