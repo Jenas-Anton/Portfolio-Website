@@ -27,11 +27,11 @@ const ChatComponent = () => {
     setIsLoading(true);
 
     try {
-      const response = await fetch('http://18.232.151.88:8000/api/chat', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ message }),
-      });
+      const response = await fetch('https://wou6ea4cz5.execute-api.us-east-1.amazonaws.com/dev/api/chat', {
+  method: 'POST',
+  headers: { 'Content-Type': 'application/json' },
+  body: JSON.stringify({ message }),
+});
 
       if (!response.ok) throw new Error(`Server error: ${response.status}`);
 
