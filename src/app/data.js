@@ -117,15 +117,6 @@ export const SkillData = [
     height: 80 
   },
 
-  // 🔹 Development Tools
-
- 
-  { 
-    name: "Jupyter Labs", 
-    src: "/skills-icons/Jupyter.png", 
-    width: 80, 
-    height: 80 
-  },
 
   // 🔹 AI/ML Skills
   { 
