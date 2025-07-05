@@ -57,7 +57,7 @@ const ChatComponent = () => {
   return (
     <div className="fixed bottom-4 right-4 flex flex-col items-end z-50">
       {isOpen && (
-        <div className="w-90 h-90 bg-grey shadow-lg rounded-lg flex flex-col" style={{ height: '30rem', width: '22rem' }}>
+        <div className="w-90 h-90 bg-grey shadow-lg rounded-lg flex flex-col" style={{ height: '30rem', width: '23rem' }}>
           {/* Header */}
           <div className="p-3 bg-gradient-to-r from-blue-900 to-black rounded-t-lg flex justify-between" style={{ height: '60px' }}>
             <h2 className="text-lg font-semibold text-transparent bg-clip-text bg-gradient-to-r from-gray-100 via-gray-200 to-gray-400 text-[40px]">
