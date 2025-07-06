@@ -4,7 +4,7 @@ export const projectsData = [
     id: 0,
     name: "Cancer-Prediction-and-Classification",
     description: "Harnessing the use of LncRNA for Cancer Prediction and Classification",
-    githubLink: "https://github.com/Jenas-Anton/Cancer-Prediction-and-Classification", 
+    github: "https://github.com/Jenas-Anton/Cancer-Prediction-and-Classification", 
     src: "/skills-icons/Cancer-Pred.webp", // Updated key from imageUrl to src
   },
   {
@@ -12,7 +12,7 @@ export const projectsData = [
     name: "Llama-3-8b-chat-doctor",
     description: "This is a project using Llama-3-8b-chat-doctor",
     date: "Updated on Nov 25, 2024",
-    githubLink: "https://github.com/Jenas-Anton/Llama-3-8b-chat-doctor-", 
+    github: "https://github.com/Jenas-Anton/Llama-3-8b-chat-doctor-", 
     src: "/skills-icons/llama.webp",
   },
   {
@@ -20,7 +20,7 @@ export const projectsData = [
     name: "Al-Cold-Mail",
     description: "This is a project on Al-Cold-Mail",
     date: "Updated on Oct 27, 2024",
-    githubLink: "https://github.com/Jenas-Anton/AI-Cold-Mail",
+    github: "https://github.com/Jenas-Anton/AI-Cold-Mail",
     src: "/skills-icons/AI-Cold-Mail.webp",
   },
   {
@@ -28,7 +28,7 @@ export const projectsData = [
     name: "Object-detection-model",
     description: "This Python script uses OpenCV for real-time vehicle counting in videos. It employs background subtraction, contour detection, and centroid tracking to detect vehicles crossing a specified line.",
     date: "Updated on Oct 1, 2024",
-    githubLink: "https://github.com/Jenas-Anton/Object-detection-model",
+    github: "https://github.com/Jenas-Anton/Object-detection-model",
     src: "/skills-icons/object-detection.webp",
   },
   {
@@ -36,7 +36,7 @@ export const projectsData = [
     name: "Stable-Diffusion-Fine-Tuning",
     description: "This repository contains code and resources for fine-tuning and utilizing machine learning models. The project focuses on training models using customized datasets, providing tools for model evaluation.",
     date: "Updated on Oct 1, 2024",
-    githubLink: "https://github.com/Jenas-Anton/Stable-Diffusion-Fine-Tuning",
+    github: "https://github.com/Jenas-Anton/Stable-Diffusion-Fine-Tuning",
     src: "/skills-icons/stable-diffusion.webp",
   },
   {
@@ -44,7 +44,7 @@ export const projectsData = [
     name: "Portfolio Website",
     description: "My personal portfolio website showcasing my skills and projects.",
     date: "Ongoing",
-    githubLink: "https://github.com/Jenas-Anton/Portfolio-Website",
+    github: "https://github.com/Jenas-Anton/Portfolio-Website",
     src: "/skills-icons/Portfolio.webp",
   },
 ];

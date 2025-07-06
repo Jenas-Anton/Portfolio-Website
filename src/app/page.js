@@ -8,6 +8,7 @@ import Typewriter from "./components/Typewriter";
 import ProjectSlider from "./main/ImageSlider";
 import EmailSection from "./main/ContactForm";
 import ChatComponent from "./main/SpeedDialButton";
+import CircularGallery from "./components/CircularGallery/CircularGallery";
 
 export default function Home() {
   const [showModel, setShowModel] = useState(false);
@@ -52,7 +53,7 @@ export default function Home() {
 
       {/* 🔹 Projects Section */}
       <section id="Projects" className="h-screen flex items-center justify-center relative z-0 w-full">
-        <ProjectSlider />
+        <CircularGallery />
       </section>
 
       {/* 🔹 Contact Section */}
