@@ -503,7 +503,7 @@ class App {
       aspect: this.screen.width / this.screen.height,
     });
     const fov = (this.camera.fov * Math.PI) / 180;
-    const height = 2 * Math.tan(fov / 2) * this.camera.position.z;
+    const height = 1.65 * Math.tan(fov / 2) * this.camera.position.z;
     const width = height * this.camera.aspect;
     this.viewport = { width, height };
     if (this.medias) {
@@ -565,7 +565,7 @@ class App {
 
 export default function CircularGallery({
   items,
-  bend = 2,
+  bend = 1.5,
   textColor = "#ffffff",
   borderRadius = 0.1,
   font = "bold 30px Figtree",
