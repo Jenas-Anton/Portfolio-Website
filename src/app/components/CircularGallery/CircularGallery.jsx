@@ -23,6 +23,11 @@ function lerp(p1, p2, t) {
   return p1 + (p2 - p1) * t;
 }
 
+function isMobile() {
+  return window.innerWidth <= 768 || 
+         /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+}
+
 function autoBind(instance) {
   const proto = Object.getPrototypeOf(instance);
   Object.getOwnPropertyNames(proto).forEach((key) => {
@@ -129,6 +134,7 @@ class Media {
     scene,
     screen,
     text,
+    github,
     viewport,
     bend,
     textColor,
@@ -145,6 +151,7 @@ class Media {
     this.scene = scene;
     this.screen = screen;
     this.text = text;
+    this.github = github;
     this.viewport = viewport;
     this.bend = bend;
     this.textColor = textColor;
@@ -154,6 +161,7 @@ class Media {
     this.createMesh();
     this.createTitle();
     this.onResize();
+    this.addClickHandler();
   }
   createShader() {
     const texture = new Texture(this.gl, { generateMipmaps: false });
@@ -228,6 +236,62 @@ class Media {
         img.naturalHeight,
       ];
     };
+  }
+
+  addClickHandler() {
+    if (!this.github) return;
+    
+    // Store reference to the canvas
+    this.canvas = this.renderer.gl.canvas;
+    
+    // Add click event listener
+    this.clickHandler = (event) => {
+      if (this.isMouseOverPlane(event)) {
+        window.open(this.github, '_blank');
+      }
+    };
+    
+    // Add hover cursor change
+    this.mouseMoveHandler = (event) => {
+      if (this.isMouseOverPlane(event)) {
+        this.canvas.style.cursor = 'pointer';
+      } else {
+        this.canvas.style.cursor = 'default';
+      }
+    };
+    
+    this.canvas.addEventListener('click', this.clickHandler);
+    this.canvas.addEventListener('mousemove', this.mouseMoveHandler);
+  }
+
+  isMouseOverPlane(event) {
+    const rect = this.canvas.getBoundingClientRect();
+    const x = ((event.clientX - rect.left) / rect.width) * 2 - 1;
+    const y = -((event.clientY - rect.top) / rect.height) * 2 + 1;
+    
+    // Convert screen coordinates to world coordinates
+    const mouse = { x, y };
+    const planeLeft = this.plane.position.x - this.plane.scale.x / 2;
+    const planeRight = this.plane.position.x + this.plane.scale.x / 2;
+    const planeTop = this.plane.position.y + this.plane.scale.y / 2;
+    const planeBottom = this.plane.position.y - this.plane.scale.y / 2;
+    
+    // Convert mouse coordinates to world space
+    const worldX = (mouse.x * this.viewport.width) / 2;
+    const worldY = (mouse.y * this.viewport.height) / 2;
+    
+    return worldX >= planeLeft && worldX <= planeRight && 
+           worldY >= planeBottom && worldY <= planeTop;
+  }
+
+  // Add cleanup method
+  destroy() {
+    if (this.clickHandler) {
+      this.canvas.removeEventListener('click', this.clickHandler);
+    }
+    if (this.mouseMoveHandler) {
+      this.canvas.removeEventListener('mousemove', this.mouseMoveHandler);
+    }
   }
   createMesh() {
     this.plane = new Mesh(this.gl, {
@@ -328,6 +392,9 @@ class App {
     } = {},
   ) {
     document.documentElement.classList.remove("no-js");
+    this.isMobile = isMobile();
+    this.originalBend = bend ;
+    this.currentBend = this.isMobile ? 0 : this.originalBend;
     this.container = container;
     this.scrollSpeed = scrollSpeed;
     this.scroll = { ease: scrollEase, current: 0, target: 0, last: 0 };
@@ -341,6 +408,8 @@ class App {
     this.update();
     this.addEventListeners();
   }
+
+  
   createRenderer() {
     this.renderer = new Renderer({ alpha: true });
     this.gl = this.renderer.gl;
@@ -376,7 +445,7 @@ class App {
         screen: this.screen,
         text: data.name,
         viewport: this.viewport,
-        bend,
+        bend: this.currentBend,
         textColor,
         borderRadius,
         font,
@@ -417,6 +486,17 @@ class App {
       width: this.container.clientWidth,
       height: this.container.clientHeight,
     };
+
+    const wasMobile = this.isMobile;
+    this.isMobile = isMobile();
+    this.currentBend = this.isMobile ? 0 : this.originalBend;
+    
+    // If mobile state changed, recreate medias with new bend
+    if (wasMobile !== this.isMobile && this.medias) {
+      this.medias.forEach(media => {
+        media.bend = this.currentBend;
+      });
+    }
     this.renderer.setSize(this.screen.width, this.screen.height);
     this.camera.perspective({
       aspect: this.screen.width / this.screen.height,
@@ -508,10 +588,13 @@ export default function CircularGallery({
   }, [items, bend, textColor, borderRadius, font, scrollSpeed, scrollEase]);
   return (
   <div className="relative w-full h-full">
-    <div className="absolute top-1 left-0 right-0 text-center z-20">
+    <div className="absolute top-1 left-0 right-0 text-center z-20 mb-40">
       <h1 className="font-semibold text-transparent bg-clip-text bg-gradient-to-r from-gray-100 via-gray-400 to-gray-400 text-[40px] sm:text-[60px]">
         My Projects
       </h1>
+      <h5 className="font-medium text-transparent bg-clip-text bg-gradient-to-r from-gray-100 via-gray-400 to-gray-400 text-[10px] sm:text-[20px]">
+        click image for github link
+      </h5>
     </div>
     <div className="circular-gallery" ref={containerRef} />
   </div>
