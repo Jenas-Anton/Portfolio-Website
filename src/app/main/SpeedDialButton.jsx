@@ -4,6 +4,7 @@ import { ChatBubbleLeftIcon, PaperAirplaneIcon } from '@heroicons/react/24/solid
 import MarkdownPreview from '@uiw/react-markdown-preview';
 import '../globals.css';
 
+
 const ChatComponent = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [message, setMessage] = useState('');
@@ -126,7 +127,7 @@ const ChatComponent = () => {
           onClick={toggleChatWindow}
           className="bg-blue-800 hover:bg-blue-600 text-white p-3 rounded-full shadow-lg"
         >
-          <ChatBubbleLeftIcon className="h-11 w-11" />
+          <ChatBubbleLeftIcon className="h-9 w-9" />
         </button>
       )}
     </div>
