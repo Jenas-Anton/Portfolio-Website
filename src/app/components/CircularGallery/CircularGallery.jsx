@@ -388,8 +388,8 @@ class App {
       textColor = "#ffffff",
       borderRadius = 0,
       font = "bold 30px Figtree",
-      scrollSpeed = 2,
-      scrollEase = 0.05,
+      scrollSpeed = 2.5,
+      scrollEase = 0.1,
     } = {},
   ) {
     document.documentElement.classList.remove("no-js");
